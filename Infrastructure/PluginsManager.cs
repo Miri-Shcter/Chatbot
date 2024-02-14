@@ -5,12 +5,14 @@ using CountTheWords;
 using DiceRoller;
 using Echo;
 using ListPlugin;
+using LegalityParentheses;
 using CountWord;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace Infrastructure
 {
@@ -49,8 +51,11 @@ namespace Infrastructure
             {
                 return new CountWordPlugin();
             }
+            else if (id == ParenthesesPlugin._Id) 
+            {
+                return new ParenthesesPlugin(); 
+            }
             else
-
             {
                 throw new NotImplementedException();
             }
@@ -64,7 +69,8 @@ namespace Infrastructure
             EchoPlugin._Id,
             ListPlugin.ListPlugin._Id,
             CountTheWordsPlugin._Id,
-            CountWordPlugin._Id
+            CountWordPlugin._Id,
+            ParenthesesPlugin._Id
         };
     }
 }
